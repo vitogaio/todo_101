@@ -1,5 +1,101 @@
 @import '../node_modules/normalize.css/normalize';
 
-h1 {
-  color: red;
+body {
+  max-width: 400px;
+  font-family: 'Abel', sans-serif;
+  margin: 0;
 }
+
+*{
+box-sizing: border-box
+}
+
+
+input {
+  height: 45px;
+  position: relative;
+  background-color: transparent;
+  display: block;
+  padding: 10px;
+  border: none;
+
+}
+
+  .fa-search {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+
+.content_arrow {
+  height: 30px;
+  position: relative;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+
+
+
+}
+
+
+
+
+/*
+.material-icons {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 13px;
+}
+
+/*
+    &:after {
+        content: "\f002";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 13px;
+  }
+ */
+
+
+/*
+.wipe {
+  background-color: #c2d6d6;
+  height: 50px;
+}
+
+.meineAufgabe {
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+}
+
+
+
+&:before  {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 13px;
+}
+*/
