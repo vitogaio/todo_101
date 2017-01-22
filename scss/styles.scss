@@ -1,9 +1,10 @@
 @import '../node_modules/normalize.css/normalize';
+@import './colors.scss';
 
 body {
   max-width: 400px;
   font-family: 'Abel', sans-serif;
-  margin: 0;
+  margin: 8px 8px 0 8px;
 }
 
 *{
@@ -12,90 +13,63 @@ box-sizing: border-box
 
 
 input {
+  width: 100%;
   height: 45px;
   position: relative;
   background-color: transparent;
+  box-shadow: inset 0 1px 8px #999;
   display: block;
   padding: 10px;
   border: none;
-
+  border-radius: 5px;
 }
 
   .fa-search {
-    content: "\f002";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 10px;
+      display: block;
+      position: absolute;
+      font-size: 1.5em;
+      top: 15px;
+      right: 20px;
+      color: lightgrey;
   }
 
 .content_arrow {
   height: 30px;
   position: relative;
-  background-color: lightgrey;
+  box-shadow: inset 1px 0 150px $color-lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
-
-
-
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: grey;
 }
 
+.content_aufgaben_1 {
+  box-shadow: inset 1px 0 150px #A8A890;
+  height: 60px;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 2px;
 
-
-
-/*
-.material-icons {
-  display: block;
-  position: absolute;
-  top: 15px;
-  right: 13px;
-}
-
-/*
-    &:after {
-        content: "\f002";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 13px;
+  .fa-clock-o,
+  .fa-tag {
+    color: white;
+    font-size: 25px;
+    float: right;
+    padding: 25px 10px 0 0;
   }
- */
 
-
-/*
-.wipe {
-  background-color: #c2d6d6;
-  height: 50px;
-}
-
-.meineAufgabe {
-  height: 40px;
-  background-color: transparent;
-  color: white;
-  padding: 10px;
+  h2 {
+    color: $color-title;
+    bottom: 10px;
+    border: none;
+    position: absolute;
+    padding-left: 15px;
+    font-size: 1.5em;
+    margin: 0;
+  }
 }
 
 
-
-&:before  {
-  content: "\f002";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  display: block;
-  position: absolute;
-  top: 15px;
-  right: 13px;
-}
-*/
