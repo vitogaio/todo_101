@@ -1,0 +1,9 @@
+@import '../node_modules/normalize.css/normalize';
+@import './colors.scss';
+
+
+h3 {
+  color: white;
+  background: $color-title;
+}
+
