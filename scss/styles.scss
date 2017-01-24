@@ -14,46 +14,52 @@ box-sizing: border-box
 }
 
 
-input {
-  width: 100%;
-  height: 45px;
-  position: relative;
+#eingang {
   background-color: transparent;
   box-shadow: inset 0 1px 8px #999;
-  display: block;
-  padding: 10px;
   border: none;
   border-radius: 5px;
+  color: $color-title;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.4em;
+  display: block;
+  height: 45px;
+  padding: 15px;
+  padding-right: 44px;
+  position: relative;
+  width: 100%;
+
 }
 
   .fa-search {
-      display: block;
-      position: absolute;
-      font-size: 1.5em;
-      top: 15px;
-      right: 20px;
       color: lightgrey;
+      display: block;
+      font-size: 1.5em;
+      position: absolute;
+      right: 20px;
+      top: 15px;
   }
 
 .content_arrow {
-  height: 30px;
-  position: relative;
-  box-shadow: inset 1px 0 150px $color-lightblue;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1.2em;
   border-radius: 5px;
-  margin-top: 5px;
+  box-shadow: inset 1px 0 150px $color-lightblue;
   color: grey;
+  display: flex;
+  font-size: 1.2em;
+  height: 30px;
+  justify-content: center;
+  margin-top: 5px;
+  position: relative;
+
 }
 
 .content_aufgaben_1 {
+  border-radius: 5px;
   box-shadow: inset 1px 0 150px #A8A890;
   height: 60px;
-  position: relative;
-  border-radius: 5px;
   margin-bottom: 2px;
+  position: relative;
 
   .fa-clock-o,
   .fa-tag {
@@ -64,14 +70,16 @@ input {
   }
 
   h2 {
-    color: $color-title;
     bottom: 10px;
     border: none;
-    position: absolute;
-    padding-left: 15px;
+    color: $color-title;
     font-size: 1.5em;
     margin: 0;
+    position: absolute;
+    padding-left: 15px;
   }
 }
 
-
+a {
+  color: white;
+}

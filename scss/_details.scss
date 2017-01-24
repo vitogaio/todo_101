@@ -3,7 +3,58 @@
 
 
 h3 {
-  color: white;
-  background: $color-title;
+  color: $color-title;
+
 }
 
+#aufgabe {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  background-color: transparent;
+  box-shadow: inset 0 1px 8px #999;
+  display: block;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid black;
+  height: 60px;
+}
+
+.shopping {
+  margin-left: 20px;
+}
+
+.check_1, .pshop {
+  float: left;
+  margin: 0;
+}
+
+.pack_1, .ppack {
+  float: left;
+  margin: 0;
+}
+
+.check_1, .pack_1 {
+  margin-top: 17px;
+}
+
+.pshop {
+  margin-top: 13px;
+  margin-left: 5px;
+  font-size: 1.2em;
+}
+
+.ppack {
+  margin-top: 13px;
+  margin-left: 5px;
+  font-size: 1.2em;
+}
+
+.pack_1 {
+  margin-left: 20px;
+}
