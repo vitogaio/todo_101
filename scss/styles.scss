@@ -1,6 +1,6 @@
 @import '../node_modules/normalize.css/normalize';
 @import './colors.scss';
-@import 'details';
+@import './details.scss';
 
 
 body {
@@ -9,10 +9,9 @@ body {
   margin: 8px 8px 0 8px;
 }
 
-*{
+* {
 box-sizing: border-box
 }
-
 
 #eingang {
   background-color: transparent;
@@ -20,7 +19,7 @@ box-sizing: border-box
   border: none;
   border-radius: 5px;
   color: $color-title;
-  font-family: 'Abel', sans-serif;
+  font-family: $myFont;
   font-size: 1.4em;
   display: block;
   height: 45px;
@@ -28,7 +27,6 @@ box-sizing: border-box
   padding-right: 44px;
   position: relative;
   width: 100%;
-
 }
 
   .fa-search {
@@ -51,7 +49,6 @@ box-sizing: border-box
   justify-content: center;
   margin-top: 5px;
   position: relative;
-
 }
 
 .content_aufgaben_1 {
