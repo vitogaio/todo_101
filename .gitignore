@@ -1,2 +1,5 @@
-.idea
+.idea // Einstellungen von unserer Entwicklungsumgebung
+node_modules
+.DS_Store
+bower_components
 node_modules
