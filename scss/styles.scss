@@ -31,7 +31,17 @@ button {
   padding: 15px;
   padding-right: 44px;
   position: relative;
-  width: 100%;
+  width: 90%;
+
+}
+
+#eingang, #addbutton {
+  float: left;
+
+}
+
+#addButton {
+  border-radius: 20px;
 }
 
   .fa-search {
@@ -39,9 +49,11 @@ button {
       display: block;
       font-size: 1.5em;
       position: absolute;
-      right: 20px;
-      top: 15px;
+      right: 60px;
+      top: 16px;
   }
+
+
 
 .content_arrow {
   align-items: center;
@@ -54,6 +66,7 @@ button {
   justify-content: center;
   margin-top: 5px;
   position: relative;
+  clear: both;
 }
 
 .content_aufgaben_1 {
