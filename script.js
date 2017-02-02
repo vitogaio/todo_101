@@ -1,3 +1,4 @@
+
 $("document").ready(function () {
 
     // FIND SOMETHING - Find the HTML-Element
@@ -14,25 +15,37 @@ $("document").ready(function () {
             var $newListItem = $('<div class="new_content"></div>');
             var $divIcons    = $('<div class="icons"></div>');
             var $h2Text      = $('<h2></h2>');
-
+            var $faClock     = $("<i class='fa fa-clock-o'></i>");
+            var $faTag       = $("<i class='fa fa-tag'></i>");
 
     // PUT the input value into the «h2-Element»
             $h2Text.text($inputValue);
     // APPEND Text to the «div class ...</div>»
             $newListItem.append($h2Text);
+
+/*
+====================================================
     // APPEND div to openDIV
             $newListItem.append($divIcons);
+====================================================
+*/
+
+    // APPEND the Awesome Icons
+            $newListItem.append($faClock);
+            $newListItem.append($faTag);
+
     // APPEND new item on top(first Item)
             $openItems.prepend($newListItem);
+    // Empty the input field on click
+            $input.val(' ');
 
-
-        var $listItem = $('.content_aufgaben_1');
+        var $listItem = $('.new_content');
 
      // APPEND work done to «doneItems»
             $listItem.on('click', function() {
                 $(this).prependTo($doneItems);
-                $(this).css('background-color', '$color-lightgrey');
-                $(this).css('opacity', '0.3');
+                $(this).css({'background-color': '$color-lightgrey',
+                             'opacity': '0.3'});
 
         });
     });
