@@ -1,39 +1,34 @@
 $("document").ready(function () {
 
     // FIND SOMETHING - Find the HTML-Element
-            var $input = $('input');
+            var $input     = $('input');
             var $addButton = $('#addButton');
             var $openItems = $('.openItems');
             var $doneItems = $('.doneItems');
 
-    // Click the button
+    // CLICK the button
             $addButton.on('click', function() {
+    // ADD the input value to a variable
             var $inputValue = $input.val();
-
-
     // DO SOMETHING = Elements to be added
-            var $newListItem = $('<div class="content_aufgaben_1"></div>');
+            var $newListItem = $('<div class="new_content"></div>');
             var $divIcons    = $('<div class="icons"></div>');
             var $h2Text      = $('<h2></h2>');
 
-    // DO SOMETHING = Elements to be added
 
-
-        $newListItem.append($divIcons);
-
-     // Append «the Value» to variable Text
+    // PUT the input value into the «h2-Element»
             $h2Text.text($inputValue);
-
-     // Append Text to the Div
+    // APPEND Text to the «div class ...</div>»
             $newListItem.append($h2Text);
-
-     // Append new item on top(first Item)
+    // APPEND div to openDIV
+            $newListItem.append($divIcons);
+    // APPEND new item on top(first Item)
             $openItems.prepend($newListItem);
+
 
         var $listItem = $('.content_aufgaben_1');
 
-
-     // Append work done to «doneItems»
+     // APPEND work done to «doneItems»
             $listItem.on('click', function() {
                 $(this).prependTo($doneItems);
                 $(this).css('background-color', '$color-lightgrey');
@@ -42,4 +37,3 @@ $("document").ready(function () {
         });
     });
 });
-
