@@ -1,5 +1,14 @@
-$("document").ready(function () {
+// Taskliste erstellen mittels Array = Objekt
+var taskliste = [
+    {"erledigt": true,  "caption": "Kehrricht entsorgen"},
+    {"erledigt": false, "caption": "Auto in Garage"},
+    {"erledigt": true,  "caption": "Tomaten schneiden"},
+    {"erledigt": false, "caption": "Fenster reinigen"}
+];
 
+
+
+$("document").ready(function () {
     // FIND SOMETHING - Find the HTML-Element
     var $input = $('input');
     var $addButton = $('#addButton');
@@ -7,40 +16,27 @@ $("document").ready(function () {
     var $doneItems = $('.doneItems');
 
 
+    // für jede Aufgabe das ensprechende Element zuweisen (div oder li)
+    taskliste.forEach(function (meineAufgabe) {
+
+        if (!meineAufgabe.erledigt) {
+            $openItems.append(createItem(meineAufgabe.caption));
+        } else {
+            $doneItems.append(createItem(meineAufgabe.caption));
+        }
+    });
+
+
+
     // CLICK the button
     $addButton.on('click', function () {
         // ADD the input value to a variable
-        var $inputValue = $input.val();
         if ($input.val() !== "") {
-            // DO SOMETHING = Elements to be added
-            var $newListItem = $('<div class="task"></div>');
-            var $divIcons = $('<div class="icons"></div>');
-            var $h2Text = $('<h2></h2>');
-            var $faClock = $("<i class='fa fa-clock-o'></i>");
-            var $faTag = $("<i class='fa fa-tag'></i>");
-
-            // PUT the input value into the «h2-Element»
-            $h2Text.text($inputValue);
-            // APPEND Text to the «div class ...</div>»
-            $newListItem.append($h2Text);
-
-            /*
-             ====================================================
-             // APPEND div to openDIV
-             $newListItem.append($divIcons);
-             ====================================================
-             */
-
-            // APPEND the Awesome Icons
-            $newListItem.append($faClock);
-            $newListItem.append($faTag);
-
             // APPEND new item on top(first Item)
-            $openItems.prepend($newListItem);
+            $openItems.prepend(createItem($input.val()));
             // Empty the input field on click
             $input.val('');
         }
-
     });
     var $openItems = $('.openItems');
 
@@ -55,5 +51,27 @@ $("document").ready(function () {
     });
 
 
+    /**
+     * Erstellt ein item für einen Task
+     * @param caption
+     * @returns {*|jQuery|HTMLElement}
+     */
+    function createItem(caption) {
+        var $newListItem = $('<div class="task"></div>');
+        var $h2Text = $('<h2></h2>');
+        var $faClock = $("<i class='fa fa-clock-o'></i>");
+        var $faTag = $("<i class='fa fa-tag'></i>");
+
+        // PUT the input value into the «h2-Element»
+        $h2Text.text(caption);
+        // APPEND Text to the «div class ...</div>»
+        $newListItem.append($h2Text);
+
+        // APPEND the Awesome Icons
+        $newListItem.append(
+            $faClock);
+        $newListItem.append($faTag);
+        return $newListItem;
+    }
 });
 
