@@ -1,23 +1,21 @@
-// Taskliste erstellen mittels Array = Objekt
+    // Taskliste erstellen mittels Array = Objekt
 var taskliste = [
-    {"erledigt": true,  "caption": "Kehrricht entsorgen"},
+    {"erledigt": false,  "caption": "Kehrricht entsorgen"},
     {"erledigt": false, "caption": "Auto in Garage"},
-    {"erledigt": true,  "caption": "Tomaten schneiden"},
+    {"erledigt": false,  "caption": "Tomaten schneiden"},
     {"erledigt": false, "caption": "Fenster reinigen"}
 ];
 
 
-
-$("document").ready(function () {
+    $("document").ready(function () {
     // FIND SOMETHING - Find the HTML-Element
-    var $input = $('input');
-    var $addButton = $('#addButton');
-    var $openItems = $('.openItems');
-    var $doneItems = $('.doneItems');
+        var $input = $('input');
+        var $addButton = $('#addButton');
+        var $openItems = $('.openItems');
+        var $doneItems = $('.doneItems');
 
-
-    // für jede Aufgabe das ensprechende Element zuweisen (div oder li)
-    taskliste.forEach(function (meineAufgabe) {
+    // APPEND each task to either openItems or to doneItems
+    taskliste.forEach(function (myTask) {
 
         if (!meineAufgabe.erledigt) {
             $openItems.append(createItem(meineAufgabe.caption));
@@ -27,27 +25,27 @@ $("document").ready(function () {
     });
 
 
-
     // CLICK the button
-    $addButton.on('click', function () {
-        // ADD the input value to a variable
+    $addButton.on('click', function() {
+    // IF the input value is not empty ...
         if ($input.val() !== "") {
-            // APPEND new item on top(first Item)
+    // PREPEND an OpenItems to the list using the function createItem
             $openItems.prepend(createItem($input.val()));
-            // Empty the input field on click
+    // EMPTY the input field on click
             $input.val('');
         }
     });
+
+
     var $openItems = $('.openItems');
 
     // APPEND work done to «doneItems»
-    $openItems.on('click', '.task', function () {
+    $openItems.on('click', '.task', function() {
         $(this).prependTo($doneItems);
         $(this).css({
             'background-color': '$color-lightgrey',
             'opacity': '0.3'
         });
-
     });
 
 
@@ -68,10 +66,8 @@ $("document").ready(function () {
         $newListItem.append($h2Text);
 
         // APPEND the Awesome Icons
-        $newListItem.append(
-            $faClock);
+        $newListItem.append($faClock);
         $newListItem.append($faTag);
         return $newListItem;
     }
 });
-
