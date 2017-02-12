@@ -1,10 +1,10 @@
 
     // Taskliste mittels Array erstellen = Objekt
 var taskliste = [
-    {"erledigt": false, "caption": "Kehrricht entsorgen", "id": 1},
-    {"erledigt": true,  "caption": "Auto in Garage", "id": 2},
-    {"erledigt": false, "caption": "Tomaten schneiden", "id": 3},
-    {"erledigt": true,  "caption": "Fenster reinigen", "id": 4}
+    {"erledigt": false, "caption": "Kehrricht entsorgen", "id": 0},
+    {"erledigt": true,  "caption": "Auto in Garage", "id": 1},
+    {"erledigt": false, "caption": "Tomaten schneiden", "id": 2},
+    {"erledigt": true,  "caption": "Fenster reinigen", "id": 3}
 ];
 
 
@@ -37,10 +37,10 @@ var taskliste = [
         }
     });
 
-        
 
 
-    // APPEND work done to «doneItems»
+
+    // APPEND OPEN to DONE
 
     var $openItems = $('.openItems');
     $openItems.on('click', '.task', function() {
