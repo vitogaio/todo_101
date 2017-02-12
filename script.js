@@ -37,10 +37,7 @@ var taskliste = [
         }
     });
 
-
-    //Im LocalStorage speichern
-        function save
-
+        
 
 
     // APPEND work done to «doneItems»
