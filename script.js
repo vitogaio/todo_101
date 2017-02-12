@@ -1,31 +1,32 @@
-    // Taskliste erstellen mittels Array = Objekt
+
+    // Taskliste mittels Array erstellen = Objekt
 var taskliste = [
-    {"erledigt": false,  "caption": "Kehrricht entsorgen"},
-    {"erledigt": false, "caption": "Auto in Garage"},
-    {"erledigt": false,  "caption": "Tomaten schneiden"},
-    {"erledigt": false, "caption": "Fenster reinigen"}
+    {"erledigt": false, "caption": "Kehrricht entsorgen", "id": 1},
+    {"erledigt": true,  "caption": "Auto in Garage", "id": 2},
+    {"erledigt": false, "caption": "Tomaten schneiden", "id": 3},
+    {"erledigt": true,  "caption": "Fenster reinigen", "id": 4}
 ];
 
 
     $("document").ready(function () {
     // FIND SOMETHING - Find the HTML-Element
-        var $input = $('input');
+        var $input     = $('input');
         var $addButton = $('#addButton');
         var $openItems = $('.openItems');
         var $doneItems = $('.doneItems');
 
     // APPEND each task to either openItems or to doneItems
-    taskliste.forEach(function (myTask) {
+    taskliste.forEach(function (meineAufgabe) {
 
         if (!meineAufgabe.erledigt) {
-            $openItems.append(createItem(meineAufgabe.caption));
+            $openItems.append(createItem(meineAufgabe.caption, meineAufgabe.id));
         } else {
-            $doneItems.append(createItem(meineAufgabe.caption));
+            $doneItems.append(createItem(meineAufgabe.caption, meineAufgabe.id));
         }
     });
 
 
-    // CLICK the button
+    // CLICK the + button
     $addButton.on('click', function() {
     // IF the input value is not empty ...
         if ($input.val() !== "") {
@@ -37,9 +38,14 @@ var taskliste = [
     });
 
 
-    var $openItems = $('.openItems');
+    //Im LocalStorage speichern
+        function save
+
+
 
     // APPEND work done to «doneItems»
+
+    var $openItems = $('.openItems');
     $openItems.on('click', '.task', function() {
         $(this).prependTo($doneItems);
         $(this).css({
@@ -54,13 +60,14 @@ var taskliste = [
      * @param caption
      * @returns {*|jQuery|HTMLElement}
      */
-    function createItem(caption) {
-        var $newListItem = $('<div class="task"></div>');
+    function createItem(caption, id) {
+        var $newListItem = $('<div class="task" data-taskid="' +  id + '"></div>');
         var $h2Text = $('<h2></h2>');
         var $faClock = $("<i class='fa fa-clock-o'></i>");
         var $faTag = $("<i class='fa fa-tag'></i>");
 
-        // PUT the input value into the «h2-Element»
+
+        // PUT the input value (caption) into the «h2-Element»
         $h2Text.text(caption);
         // APPEND Text to the «div class ...</div>»
         $newListItem.append($h2Text);
